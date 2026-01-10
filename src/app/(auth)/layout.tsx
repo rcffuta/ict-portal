@@ -1,3 +1,5 @@
+import { Logo } from "@/components/ui/logo";
+
 export default function AuthLayout({
     children,
 }: {
@@ -7,15 +9,8 @@ export default function AuthLayout({
         <div className="min-h-screen w-full lg:grid lg:grid-cols-3">
             {/* Left Side - Brand Panel (Hidden on Mobile) */}
             <div className="hidden h-full flex-col justify-between bg-rcf-navy p-10 text-white lg:flex ">
-                <div className="flex items-center gap-2">
-                    <div className="h-8 w-8 rounded bg-white/10 p-1 flex items-center justify-center">
-                        <span className="font-bold text-white text-xs">
-                            RCF
-                        </span>
-                    </div>
-                    <span className="text-lg font-bold tracking-tight">
-                        RCF FUTA
-                    </span>
+                <div className="flex items-center gap-2 justify-center">
+                    <Logo variant="white" width={130} asLink/>
                 </div>
 
                 <div className="space-y-4">

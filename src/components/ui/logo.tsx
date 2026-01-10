@@ -41,7 +41,7 @@ export function Logo({
 
     if (asLink) {
         return (
-            <Link href="/" className="hover:opacity-90 transition-opacity">
+            <Link href="/" className="hover:opacity-90 transition-opacity inline-block">
                 {LogoImage}
             </Link>
         );
