@@ -12,6 +12,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@rcffuta/ict-lib": "workspace:*",
     "@tailwindcss/postcss": "^4.1.18",
+    "@yudiel/react-qr-scanner": "^2.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.25.0",
     "lucide-react": "^0.562.0",
@@ -20,6 +21,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-hook-form": "^7.70.0",
+    "react-qr-code": "^2.0.18",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "zod": "^4.3.5"

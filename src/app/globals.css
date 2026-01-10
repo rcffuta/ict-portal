@@ -54,3 +54,68 @@ body {
   font-family: var(--font-geist-sans), sans-serif;
   /* Next.js default font */
 }
+
+/* Print styles: only show the `.printable` area when printing */
+@media print {
+  /* Hide everything by default */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Make the printable area and its children visible */
+  .printable,
+  .printable * {
+    visibility: visible !important;
+  }
+
+  /* Ensure printable area fills the page for printing */
+  .printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #ffffff !important; /* force white bg for clarity */
+    box-shadow: none !important;
+    /* Ask the browser to preserve colors when possible; fallbacks below
+       ensure readability even if background printing is disabled. */
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    color: #0f172a !important;
+  }
+
+  /* Any element with .no-print will be hidden in print */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Make sure text that was white on colored backgrounds becomes readable */
+  .printable .text-white {
+    color: inherit !important;
+  }
+
+  /* Remove heavy background gradients/images that most browsers won't print
+     (we keep layout via borders and text color so printed ticket remains clear) */
+  .printable [class*="bg-"] {
+    background: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Ensure borders are visible (use a medium gray) */
+  .printable [class*="border-"] {
+    border-color: #d1d5db !important; /* slate-300 */
+  }
+
+  /* Ensure primary text elements use a dark color for legibility */
+  .printable h1,
+  .printable h2,
+  .printable h3,
+  .printable p,
+  .printable span,
+  .printable div {
+    color: #0f172a !important;
+  }
+
+  @page {
+    margin: 12mm;
+  }
+}
